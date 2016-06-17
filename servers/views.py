@@ -9,6 +9,7 @@ from servers.forms import ComputeAddTcpForm, ComputeAddSshForm, ComputeEditHostF
 from vrtManager.hostdetails import wvmHostDetails
 from vrtManager.connection import CONN_SSH, CONN_TCP, CONN_TLS, CONN_SOCKET, connection_manager
 from libvirt import libvirtError
+import pprint
 
 
 def index(request):
@@ -144,5 +145,7 @@ def infrastructure(request):
                 hosts_vms[host.id, host.name, status, 0, 0, 0] = None
         else:
             hosts_vms[host.id, host.name, 2, 0, 0, 0] = None
+
+    pprint.pprint(locals())
 
     return render_to_response('infrastructure.html', locals(), context_instance=RequestContext(request))

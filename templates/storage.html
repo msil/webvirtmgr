@@ -194,9 +194,7 @@
                                                             <div class="col-sm-6">
                                                                 <select name="format" class="form-control image-format">
                                                                     <option value="raw">{% trans "raw" %}</option>
-                                                                    <option value="qcow">{% trans "qcow" %}</option>
-                                                                    <option value="qcow2">{% trans "qcow2" %}</option>
-                                                                    <option value="qed">{% trans "qed" %}</option>
+                                                                    <option value="logical">{% trans "logical" %}</option>
                                                                 </select>
                                                             </div>
                                                         </div>
@@ -273,8 +271,8 @@
 
                         <div class="col-sm-6">
                             <select name="format" class="form-control image-format">
+                                <option value="logical">{% trans "logical" %}</option>
                                 <option value="qcow2">{% trans "qcow2" %}</option>
-                                <option value="qcow">{% trans "qcow" %}</option>
                                 <option value="qed">{% trans "qed" %}</option>
                                 <option value="raw">{% trans "raw" %}</option>
                             </select>

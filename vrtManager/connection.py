@@ -149,7 +149,7 @@ class wvmConnection(object):
     def __connect_tcp(self):
         flags = [libvirt.VIR_CRED_AUTHNAME, libvirt.VIR_CRED_PASSPHRASE]
         auth = [flags, self.__libvirt_auth_credentials_callback, None]
-        uri = 'qemu+tcp://%s/system' % self.host
+        uri = 'xen+tcp://%s/system' % self.host
 
         try:
             self.connection = libvirt.openAuth(uri, auth, 0)
@@ -230,7 +230,7 @@ class wvmConnection(object):
         else:
             type_str = u'invalid_type'
 
-        return u'qemu+{type}://{user}@{host}/system'.format(type=type_str, user=self.login, host=self.host)
+        return u'xen+{type}://{user}@{host}/system'.format(type=type_str, user=self.login, host=self.host)
 
     def __repr__(self):
         return '<wvmConnection {connection_str}>'.format(connection_str=unicode(self))
